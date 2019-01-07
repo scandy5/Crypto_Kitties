@@ -1,1 +1,1 @@
-<a href="https://scandy5.github.io/Crypto_Kitties/dist/">link</a>
+<a href="https://scandy5.github.io/Crypto_Kitties/dist/index.html">link</a>
