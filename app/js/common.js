@@ -121,10 +121,19 @@ const cats = [
 		}
 		]
 
+function getRandomColor() {
+	var letters = '0123456789ABCDEF'.split('');
+	var color = '#';
+	for (var i = 0; i < 6; i++ ) {
+		color += letters[Math.round(Math.random() * 15)];
+	}
+	return color;
+}
+
 const getCats = (cats) => { 
 	return cats.map((cat) => {
 		return `
-		<div class="card">
+		<div class="card" style="background-color: ${getRandomColor()}">
 					<div class="card__img"><img src="${cat.img_url}" alt="${cat.name}"></div>
 					<div class="card__name">${cat.name}</div>
 					<div class="card__id"># ${cat.id}</div>
@@ -134,6 +143,9 @@ const getCats = (cats) => {
 		`
 	}).join('') 
 }
+
+
+
 
 document.querySelector('.card-wrapper').innerHTML = getCats(cats);
 
