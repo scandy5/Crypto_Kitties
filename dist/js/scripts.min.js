@@ -129,7 +129,7 @@ const getCats = (cats) => {
 					<div class="card__name">${cat.name}</div>
 					<div class="card__id"># ${cat.id}</div>
 					<div class="card__category">Category: ${cat.category}</div>
-					<div class="card__price">price: ${cat.price}</div>
+					<div class="card__price">price: ${cat.price}$</div>
 		</div>
 		`
 	}).join('') 
