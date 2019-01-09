@@ -16,7 +16,7 @@
 	transition: all .25s;
 	cursor: pointer;
 	&:hover {
-		transform: scale(.99);
+		transform: scale(.98);
 	}
 }
 
@@ -32,8 +32,8 @@
 }
 .card__name {
 	position: absolute;
-	bottom: 60px;
-	width: 99.5%;
+	bottom: 54px;
+	width: 100%;
 	text-align: center;
 	background-color: darken($card-bg, 10%);
 	border-bottom: 1px dashed darken($card-bg, 20%);
@@ -42,8 +42,7 @@
 .card__id {
 	position: absolute;
 	bottom: 26px;
-	height: 33px;
-	width: 99.5%;
+	width: 100%;
 	text-align: center;
 	background-color: darken($card-bg, 10%);
 	border-bottom: 1px dashed darken($card-bg, 20%);
