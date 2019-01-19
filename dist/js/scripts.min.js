@@ -7,27 +7,25 @@ const getRandomColor = () => {
 	return color;
 }
 
-var kitties = new XMLHttpRequest();
-kitties.onload = reqListener;
-kitties.open("get", "https://ma-cats-api.herokuapp.com/api/cats", true);
-kitties.send();
-
-function reqListener() {
-	const infoOfCats = JSON.parse(kitties.responseText);
-	const cats = infoOfCats.cats.slice(0, 12);
-	const listOfCats = cats.map((cat) => {
-		return `
-		<div class="card" style="background-color: ${getRandomColor()}">
-			<div class="card__img"><img src="${cat.img_url}" alt="${cat.name}"></div>
-			<div class="card__id"># ${cat.id}</div>
-			<div class="card__name">Name: ${cat.name}</div>
-			<div class="card__category">Category: ${cat.category}</div>
-			<div class="card__price">Price: ${cat.price}$</div>
-		</div>
-		`
-	}).join('') 
-	document.querySelector('.card-wrapper').innerHTML = listOfCats;
-}
+fetch('https://ma-cats-api.herokuapp.com/api/cats?&per_page=12')
+  .then((response) => {
+		return response.json();
+	})
+	.then(function (kitties) {
+		const infoOfCats = kitties.cats;
+		const listOfCats = infoOfCats.map((cat) => {
+			return `
+			<div class="card" style="background-color: ${getRandomColor()}">
+				<div class="card__img"><img src="${cat.img_url}" alt="${cat.name}"></div>
+				<div class="card__id"># ${cat.id}</div>
+				<div class="card__name">Name: ${cat.name}</div>
+				<div class="card__category">Category: ${cat.category}</div>
+				<div class="card__price">Price: ${cat.price}$</div>
+			</div>
+			`
+		}).join('');
+		document.querySelector('.card-wrapper').innerHTML = listOfCats;
+	})
 
 
 
