@@ -1,3 +1,10 @@
+document.body.onload = function () {
+	setTimeout(function() {
+		let preloader = document.getElementById('cube-loader');
+		preloader.classList.toggle('done');
+	}, 1000)
+}
+
 const getRandomColor = () => {
 	let letters = '0123456789ABCDEF'.split('');
 	let color = '#';
@@ -26,6 +33,7 @@ fetch('https://ma-cats-api.herokuapp.com/api/cats?&per_page=12')
 		}).join('');
 		document.querySelector('.card-wrapper').innerHTML = listOfCats;
 	})
+
 
 
 
