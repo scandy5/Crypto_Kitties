@@ -23,11 +23,10 @@ fetch('https://ma-cats-api.herokuapp.com/api/cats?&per_page=12')
 
 		function makeCounter() {
 			let currentCount = 1;
-			let preCurrentCount = 1;
+			let preCurrentCount = 0;
 			return function() {
 
-				if (currentCount > 9) {
-					preCurrentCount = 2;
+				if (currentCount >= 9) {
 					currentCount = 0;
 				}
 				return (preCurrentCount + '.' + currentCount++);
