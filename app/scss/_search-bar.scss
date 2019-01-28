@@ -1,0 +1,23 @@
+.search-wrapper	{
+	max-width: 1200px;
+	margin: 0 auto;
+	margin-top: 20px;
+}
+.search-form {
+	display: flex;
+}
+.search-bar {
+	input {
+		width: 100%;
+		border: none;
+		color: #666;
+		padding-left: 15px;
+	}
+	.search-icon {
+		img {
+			width: 20px;	
+		}
+	}
+	padding-bottom: 10px;
+	border-bottom: 1px solid #aaa;
+}

@@ -20,9 +20,27 @@ fetch('https://ma-cats-api.herokuapp.com/api/cats?&per_page=12')
 	})
 	.then(function (kitties) {
 		const infoOfCats = kitties.cats;
+
+		function makeCounter() {
+			let currentCount = 1;
+			let preCurrentCount = 1;
+			return function() {
+
+				if (currentCount >= 9) {
+					preCurrentCount = 2;
+					currentCount = 0;
+				}
+				return (preCurrentCount + '.' + currentCount++);
+			}
+		};
+
+		
+
+		let counter = makeCounter();
+	
 		const listOfCats = infoOfCats.map((cat) => {
 			return `
-			<div class="card" style="background-color: ${getRandomColor()}">
+			<div class="card wow bounceInUp" data-wow-delay="${counter()}s" style="background-color: ${getRandomColor()}">
 				<div class="card__img"><img src="${cat.img_url}" alt="${cat.name}"></div>
 				<div class="card__id"># ${cat.id}</div>
 				<div class="card__name">Name: ${cat.name}</div>
@@ -31,6 +49,7 @@ fetch('https://ma-cats-api.herokuapp.com/api/cats?&per_page=12')
 			</div>
 			`
 		}).join('');
+
 		document.querySelector('.card-wrapper').innerHTML = listOfCats;
 	})
 

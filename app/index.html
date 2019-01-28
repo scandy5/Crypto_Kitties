@@ -24,10 +24,6 @@
 </head>
 <body>
 
-	<!-- <div id="page-preloader" class="preloader">
-		<div class="loader"></div>
-	</div> -->
-
 	<div id="cube-loader">
 			<div class="caption">
 				<div class="cube-loader">
@@ -38,10 +34,21 @@
 				</div>
 			</div>
 	</div>
+
+	<div class="search-wrapper">
+		<div class="search-bar">
+			<form action="get" id="search-form" class="search-form">
+				<a href="#" class="search-icon"><img src="./img/search-solid.svg" alt="search"></a>
+				<input type="text" placeholder="Search">
+			</form>
+		</div>
+	</div>
 	
 	<div class="card-wrapper"></div>
 
 	<script src="js/scripts.min.js"></script>
-
+	<script>
+		new WOW().init();
+	</script>
 </body>
 </html>
