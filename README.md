@@ -12,7 +12,7 @@ Demo you can see, if you click [here].
 
 ## How to start project
  - open console 
- - `git clone https://github.com/scandy5/ReliablePSD`
+ - `git clone https://github.com/scandy5/Crypto_Kitties`
  - `npm i`
  - `gulp` 
 ### Result:
