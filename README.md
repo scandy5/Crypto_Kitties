@@ -16,7 +16,7 @@ Demo you can see, if you click [here].
  - `npm i`
  - `gulp` 
 ### Result:
-![home](#)
+![home](https://github.com/scandy5/Crypto_Kitties/blob/master/app/img/Crypto_Kitties.png)
 
 [here]: https://scandy5.github.io/Crypto_Kitties/dist/index.html
 
