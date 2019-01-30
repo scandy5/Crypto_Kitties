@@ -1,5 +1,3 @@
-import { log } from "util";
-
 document.body.onload = function () {
 	setTimeout(function() {
 		let preloader = document.getElementById('cube-loader');
@@ -114,17 +112,14 @@ fetch('https://api.cryptokitties.co/v2/kitties?offset=0&limit=12&parents=false&a
 		});
 	})
 
-let cards = document.querySelector('.card-wrapper');
-cards.addEventListener('scroll', () => {
-	if (cards.scrollTop + cards.clientHeight >= cards.scrollHeight) {
-		console.log('done');
-	}
-});
+	let cards = document.querySelector('.card-wrapper');
 
-
-
-
-
+	cards.addEventListener('scroll', () => {
+		if (cards.scrollTop + cards.clientHeight >= cards.scrollHeight) {
+			console.log('done');
+		}
+	});
+	
 
 // let	lastCard;
 
