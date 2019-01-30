@@ -53,6 +53,12 @@ b, strong {
 	font-weight: bold;
 }
 
+#search-button {
+	background: url(../img/search-solid.svg) center no-repeat;
+	width: 20px;
+	cursor: pointer;
+}
+
 
 
 @import "media"; // Always at the end
