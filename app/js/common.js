@@ -1,8 +1,15 @@
+import { log } from "util";
+
 document.body.onload = function () {
 	setTimeout(function() {
 		let preloader = document.getElementById('cube-loader');
 		preloader.classList.toggle('done');
 	}, 1000)
+
+	setTimeout(() => {
+		let lastCard = document.querySelector('.card-wrapper').lastElementChild;
+		console.dir(lastCard);
+	}, 2000)
 }
 
 
@@ -54,6 +61,7 @@ fetch('https://api.cryptokitties.co/v2/kitties?offset=0&limit=12&parents=false&a
 			const status = cat.status;
 			const cooldown = status.cooldown_index;
 			let category;
+
 			if (cooldown < 2) {
 					category = 'Fast';
 			} else if (cooldown < 3) {
@@ -102,8 +110,48 @@ fetch('https://api.cryptokitties.co/v2/kitties?offset=0&limit=12&parents=false&a
 			} else {
 				filteredCats = infoOfCats;
 			}
-			
-
 			renderKitties(filteredCats);
 		});
 	})
+
+let cards = document.querySelector('.card-wrapper');
+
+cards.addEventListener('scroll' () => {
+	if (cards.scrollTop + cards.clientHeight >= cards.scrollHeight){
+		console.log('done');
+	}
+})
+
+
+
+
+
+
+// let	lastCard;
+
+// let lastCardOffset;
+
+// function timeout (ms) {
+// 	return new Promise (resolve => setTimeout (resolve, ms));
+// }
+
+
+
+// document.addEventListener('scroll', () => {
+
+// 	function foo () {
+// 		// await timeout(2000);
+// 		lastCard = document.querySelector('.card-wrapper').lastElementChild;
+// 		document.body.onload(() => {
+// 			lastCardOffset = lastCard.offsetTop;
+// 		})
+		
+// 		console.log(lastCardOffset);
+		
+// 	}
+// 	console.log(lastCardOffset);
+	
+// 	if (document.body.scrollTop > lastCardOffset - 200) {
+// 		console.log('done');
+// 	}
+// });
