@@ -138,7 +138,6 @@ async function renderKittiesConcatinate(data) {
 	}).join('');
 } 
 
-
 renderKitties();
 
 (async function getSearch() {

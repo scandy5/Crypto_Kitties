@@ -1,47 +1,52 @@
-// @import "vars";
-
-
-// /*==========  Desktop First  ==========*/
-
-// // ≥1200px
-// @include media-breakpoint-down(lg) {
-	
-// }
-
-// // ≥992px
-// @include media-breakpoint-down(md) {
-
-// }
-
-// // ≥768px
-// @include media-breakpoint-down(sm) {
-
-// }
-
-// // ≥576px
-// @include media-breakpoint-down(xs) {
-
-// }
-
-
-// /*==========  Mobile First  ==========*/
-
-// // ≤576px
-// @include media-breakpoint-up(sm) {
-
-// }
-
-// // ≤768px
-// @include media-breakpoint-up(md) {
-
-// }
-
-// // ≤992px
-// @include media-breakpoint-up(lg) {
-
-// }
-
-// // ≤1200px
-// @include media-breakpoint-up(xl) {
-	
-// }
+@media (min-width: 990px) and (max-width: 1250px) {
+	.card-wrapper {
+		max-width: 980px;
+		text-align: center;
+		justify-content: center;
+	}
+	.search-wrapper {
+		max-width: 980px;
+	}
+}
+@media (min-width: 576px) and (max-width: 990px) {
+	.card-wrapper {
+		max-width: 550px;
+		text-align: center;
+		justify-content: center;
+	}
+	.card {
+		width: 170px;
+		height: 170px;
+		.card__price, .card__name, .card__id, .card__category {
+			font-size: 14px;
+			height: 24px;
+			overflow: hidden;
+		}
+	}
+	.search-wrapper {
+		max-width: 550px;
+	}
+}
+@media (min-width: 0) and (max-width: 575px) {
+	.card-wrapper {
+		max-width: 310px;
+		text-align: center;
+		justify-content: center;
+	}
+	#button {
+		margin-right: 0;
+	}
+	.card {
+		width: 170px;
+		height: 170px;
+		margin-right: 0;
+		.card__price, .card__name, .card__id, .card__category {
+			font-size: 14px;
+			height: 24px;
+			overflow: hidden;
+		}
+	}
+	.search-wrapper {
+		max-width: 310px;
+	}
+}
