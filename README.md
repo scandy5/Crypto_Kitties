@@ -2,6 +2,7 @@
 
 ## This is a online store of kitties
 
+In the store were used fetch requests with API: `https://api.cryptokitties.co/v2/kitties`
 Demo you can see, if you click [here].
 
 ### Technologies that were used in the project:
